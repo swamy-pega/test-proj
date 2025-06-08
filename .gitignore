@@ -12,3 +12,5 @@ venv/
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
+#skp env
+echo ".env" >> .gitignore

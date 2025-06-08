@@ -1,11 +1,19 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm import declarative_base
+import os
+from dotenv import load_dotenv
 
 # Replace with your actual DB URL
-DATABASE_URL = "postgresql://postgres:password@localhost:5432/postgres"
-print("Connecting to the database...")
-#test apai
+load_dotenv()
+
+api_url = os.getenv("API_URL")
+
+
+#DATABASE_URL = "postgresql://postgres:password@localhost:5432/postgres"
+DATABASE_URL = os.getenv("DB_URL")
+print("Connecting to the database..."+DATABASE_URL)
+#test apaigit remote add origin  https://github.com/swamy-pega/python_api.git
 engine = create_engine(DATABASE_URL)
 
 # Session setup
