@@ -9,8 +9,6 @@ load_dotenv()
 
 api_url = os.getenv("API_URL")
 
-
-#DATABASE_URL = "postgresql://postgres:password@localhost:5432/postgres"
 DATABASE_URL = os.getenv("DB_URL")
 print("Connecting to the database...")
 #m/swamy-pega/python_api.git
