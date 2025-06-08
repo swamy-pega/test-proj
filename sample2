@@ -1,0 +1,54 @@
+ {
+    "question_list": [
+       {
+          "question_text": "What is the capital of France?",
+          "question_type": "mcq1",
+          "answers": [
+             {"answer_text": "Madrid", "is_correct": false},
+             {"answer_text": "Berlin", "is_correct": false},
+             {"answer_text": "Paris", "is_correct": true},
+             {"answer_text": "Rome", "is_correct": false}
+          ],
+          "explanation": "Paris is the capital city of France, known for its art, fashion, and culture.",
+          "difficulty": "easy",
+          "is_active": true,
+          "topic": "Geography",
+          "level": 1,
+          "created_by":"test"
+       },
+         {
+             "question_text": "What is the largest planet in our solar system?",
+             "question_type": "mcq1",
+             "answers": [
+                 {"answer_text": "Earth", "is_correct": false},
+                 {"answer_text": "Mars", "is_correct": false},
+                 {"answer_text": "Jupiter", "is_correct": true},
+                 {"answer_text": "Saturn", "is_correct": false}
+             ],
+             "explanation": "Jupiter is the largest planet in our solar system, known for its Great Red Spot and many moons.",
+             "difficulty": "medium",
+             "is_active": true,
+             "topic": "Astronomy",
+             "level": 2,
+             "created_by":"test"
+         },
+         {
+             "question_text": "What is the chemical symbol for water?",
+             "question_type": "mcq1",
+             "answers": [
+                 {"answer_text": "H2O", "is_correct": true},
+                 {"answer_text": "CO2", "is_correct": false},
+                 {"answer_text": "O2", "is_correct": false},
+                 {"answer_text": "NaCl", "is_correct": false}
+             ],
+             "explanation": "The chemical symbol for water is H2O, which consists of two hydrogen atoms and one oxygen atom.",
+             "difficulty": "easy",
+             "is_active": true,
+             "topic": "Chemistry",
+             "level": 1,
+             "created_by":"test"
+         }
+    ]  
+         }  
+    
+ 
