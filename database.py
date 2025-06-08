@@ -12,8 +12,8 @@ api_url = os.getenv("API_URL")
 
 #DATABASE_URL = "postgresql://postgres:password@localhost:5432/postgres"
 DATABASE_URL = os.getenv("DB_URL")
-print("Connecting to the database..."+DATABASE_URL)
-#test apaigit remote add origin  https://github.com/swamy-pega/python_api.git
+print("Connecting to the database...")
+#m/swamy-pega/python_api.git
 engine = create_engine(DATABASE_URL)
 
 # Session setup
