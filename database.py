@@ -5,7 +5,7 @@ from sqlalchemy.orm import declarative_base
 # Replace with your actual DB URL
 DATABASE_URL = "postgresql://postgres:password@localhost:5432/postgres"
 print("Connecting to the database...")
-
+#test apai
 engine = create_engine(DATABASE_URL)
 
 # Session setup
