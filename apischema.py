@@ -1,9 +1,9 @@
 from pydantic import BaseModel  
 from typing import Optional, List, Dict, Any, Union
 from datetime import datetime
-from pydantic import Field, model_validator
+from pydantic import Field, model_validator,EmailStr
 from pydantic import ConfigDict
-class post(BaseModel):
+class Post(BaseModel):
     #id: int
     title: str
     content: str
@@ -39,6 +39,58 @@ class Config:
 
 class questionList(BaseModel):
     question_list: List[questions]
+
+class UserCreate(BaseModel):
+    email: EmailStr
+    password: str
+    name: Optional[str] = None
+    #is_active: bool = True
+    created_at: datetime = Field(default_factory=datetime.now)
+    updated_at: Optional[datetime] = None
+
+class UserResponse(BaseModel):
+    email: EmailStr
+    id:int
+    #is_active: bool = True
+    created_at: datetime = Field(default_factory=datetime.now)
+    #updated_at: Optional[datetime] = None
+
+class UserUpdate(BaseModel):
+    email: EmailStr
+    #is_active: bool = True
+    created_at: datetime = Field(default_factory=datetime.now)
+    updated_at: Optional[datetime] = None 
+
+class UserOutput(BaseModel):
+    id: int
+    email: str
+    name: Optional[str] = None
+    is_active: bool = True
+    created_at: datetime = Field(default_factory=datetime.now)
+    #updated_at: Optional[datetime] = None
+
+class UserLogin(BaseModel):
+    email: EmailStr
+    password: str
+
+class PostBase(BaseModel):
+   
+    title: str
+    content: str
+    created_at: datetime = Field(default_factory=datetime.now)
+    published: bool = True
+   
+class PostCreate(PostBase):
+      pass      
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+class TokenData(BaseModel):
+    id: Optional[int] = None
+    email: Optional[str] = None
+    name: Optional[str] = None
 
 
 

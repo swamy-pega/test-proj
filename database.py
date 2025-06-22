@@ -1,5 +1,6 @@
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker,Session
+from sqlalchemy import Column, Integer, String, DateTime, Boolean, ForeignKey
 from sqlalchemy.orm import declarative_base
 import os
 from dotenv import load_dotenv
@@ -10,7 +11,7 @@ load_dotenv()
 api_url = os.getenv("API_URL")
 
 DATABASE_URL = os.getenv("DB_URL")
-print("Connecting to the database...")
+print("Conneted the database...")
 #m/swamy-pega/python_api.git
 engine = create_engine(DATABASE_URL)
 

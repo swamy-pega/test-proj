@@ -1,4 +1,6 @@
 __pycache__/
+venv/
+.env/
 *.py[cod]
 *.so
 
@@ -11,6 +13,7 @@ venv/
 *.swp
 
 # Jupyter Notebook checkpoints
+
 .ipynb_checkpoints/
 #skp env
 echo ".env" >> .gitignoregit rm --cached .env

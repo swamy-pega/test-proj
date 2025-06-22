@@ -55,3 +55,17 @@ class Answers(Base):
     class Config:
         orm_mode = True  # Enable ORM mode for Pydantic compatibility 
 # This allows the model to be used with Pydantic for serialization/deserialization      
+class User(Base):
+    __tablename__ = 'users'
+    __table_args__ = {'schema': 'fastapi'}  # Specify the schema if needed
+
+    id = Column(Integer, primary_key=True, index=True)
+    email = Column(String, unique=True, index=True, nullable=False)
+    name = Column(String, nullable=True)
+    password = Column(String, nullable=False)
+    is_active = Column(Boolean, default=True)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_at = Column(DateTime(timezone=True), onupdate=func.now(), nullable=True)
+
+    class Config:
+        orm_mode = True  # Enable ORM mode for Pydantic compatibility
