@@ -39,7 +39,7 @@ def add_answers(answers: apischema.answers, id: int, db: Session = Depends(datab
 ### add questions to the datbase
 def add_question(question: apischema.questions,db: Session = Depends(database.get_db)): 
     try:
-        print("@@@@@@@@@@@@@@@add_question call"+question.question_text)
+        print("#####add_question call"+question.question_text+ "db session "+db)
         new_question = models.Questions(
             question_text=question.question_text,
             created_at=datetime.now(ZoneInfo("UTC")),
