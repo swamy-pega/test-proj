@@ -9,7 +9,7 @@ db= database.get_db()
 questionsrouter = APIRouter(prefix="/questions/v1" , tags=["quiz_questions"])
 
 ######### add answrs post by id  ##########################
-def add_answers(answers: apischema.answers, id: int):  
+def add_answers(answers: apischema.answers, id: int, db: Session = Depends(database.get_db)):  
     #print("add answers to the database"+"11")
     if not answers:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, content="No answers provided")
@@ -37,7 +37,7 @@ def add_answers(answers: apischema.answers, id: int):
 ### add question and answer to the database
 
 ### add questions to the datbase
-def add_question(question: apischema.questions): 
+def add_question(question: apischema.questions,db: Session = Depends(database.get_db)): 
     try:
         print("@@@@@@@@@@@@@@@add_question call"+question.question_text)
         new_question = models.Questions(
