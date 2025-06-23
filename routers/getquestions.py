@@ -9,10 +9,17 @@ db= database.get_db()
 questionsrouter = APIRouter(prefix="/questions/v1" , tags=["quiz_questions"])
 
 ######### add answrs post by id  ##########################
-def add_answers(answers: apischema.answers, id: int, db: Session = Depends(database.get_db)):  
+def add_answers(answers, id: int, db):  
     #print("add answers to the database"+"11")
     if not answers:
+        #print("add answers to the database"+"22")
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, content="No answers provided")
+        #############return {"error": "No answers provided"}
+    
+
+    if not isinstance(answers, list):
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid data format for answers")
+    #print("add answers to the database"+" "+str(answers))
     # Assuming 'answer' is a list of Answers objects
     try:
           for answer in answers:
@@ -37,9 +44,9 @@ def add_answers(answers: apischema.answers, id: int, db: Session = Depends(datab
 ### add question and answer to the database
 
 ### add questions to the datbase
-def add_question(question: apischema.questions,db: Session = Depends(database.get_db)): 
+def add_question(question,db): 
     try:
-        print("#####add_question call"+question.question_text+ "db session "+db)
+        print("#####add_question call"+question.question_text+ "db session "+str(db))
         new_question = models.Questions(
             question_text=question.question_text,
             created_at=datetime.now(ZoneInfo("UTC")),
@@ -52,24 +59,24 @@ def add_question(question: apischema.questions,db: Session = Depends(database.ge
             explanation=question.explanation
         )
         db.add(new_question)
-        print("##########new question"+" "+str(new_question))
+        #print("##########new question"+" "+str(new_question))
         # Commit the new question to the database
         db.commit()
-        print("##########new commit"+" "+str(new_question.id))
+        #print("##########new commit"+" "+str(new_question.id))
         db.refresh(new_question)  # Refresh to get the new ID
-        print("##########else new question"+" "+str(new_question.id))
+        #print("##########else new question"+" "+str(new_question.id))
         if not new_question:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, content="Question not added successfully")
         else:
             #print("##########else new question"+" "+str(new_question.id))
-            add_answers(question.answers, new_question.id)  # Assuming each question has a list of answers
+            add_answers(question.answers, new_question.id,db)  # Assuming each question has a list of answers
         
     except Exception as e:
         return {"error": str(e)}
 
 @questionsrouter.post("/add")
 def add_questions(questions: apischema.questionList,db: Session = Depends(database.get_db)):
-    print("add questions to the database"+" "+str(questions))
+    #print("add questions to the database"+" "+str(questions))
     if not questions.question_list:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="No questions provided")
     # Assuming 'questions' is a list of Questions objectsan
@@ -79,7 +86,7 @@ def add_questions(questions: apischema.questionList,db: Session = Depends(databa
     for question in questions:
     # Assuming 'questions' is a list of Questions objects
      #print("@@@@@############each questions add question to the database"+" "+str(question))
-        add_question(question)  # Call the add_question function for each question
+        add_question(question,db)  # Call the add_question function for each question
         
     # If you want to return a success message after adding all questions
     if not questions:
