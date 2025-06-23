@@ -15,7 +15,10 @@ load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 DATABASE_URL_set=settings.db_url
-print("Conneted the database..."+DATABASE_URL+" "+DATABASE_URL_set)
+print("Conneted the database..."+DATABASE_URL+" from settings "+DATABASE_URL_set)
+
+if DATABASE_URL and DATABASE_URL.startswith("postgres://"):
+    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
 #m/swamy-pega/python_api.git
 engine = create_engine(DATABASE_URL)
 
