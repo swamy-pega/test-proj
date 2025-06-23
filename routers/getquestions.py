@@ -54,7 +54,7 @@ def add_question(question: apischema.questions):
         db.add(new_question)
         db.commit()
         db.refresh(new_question)  # Refresh to get the new ID
-        #print("##########else new question"+" "+str(new_question.id))
+        print("##########else new question"+" "+str(new_question.id))
         if not new_question:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, content="Question not added successfully")
         else:
