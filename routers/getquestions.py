@@ -39,7 +39,7 @@ def add_answers(answers: apischema.answers, id: int):
 ### add questions to the datbase
 def add_question(question: apischema.questions): 
     try:
-        #print("@@@@@@@@@@@@@@@add_question call"+question.question_text)
+        print("@@@@@@@@@@@@@@@add_question call"+question.question_text)
         new_question = models.Questions(
             question_text=question.question_text,
             created_at=datetime.now(ZoneInfo("UTC")),
@@ -66,7 +66,7 @@ def add_question(question: apischema.questions):
 
 @questionsrouter.post("/add")
 def add_questions(questions: apischema.questionList,db: Session = Depends(database.get_db)):
-    #print("add questions to the database"+" "+str(questions))
+    print("add questions to the database"+" "+str(questions))
     if not questions.question_list:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="No questions provided")
     # Assuming 'questions' is a list of Questions objectsan
