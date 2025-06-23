@@ -5,7 +5,7 @@ from sqlalchemy import engine_from_config, pool
 from config import settings
 
 config = context.config
-config.set_main_option("sqlalchemy.url", "postgresql://postgres:password@localhost:5432/postgres")  
+#config.set_main_option("sqlalchemy.url", "postgresql://postgres:password@localhost:5432/postgres")  
 
 temp=settings.db_host
 config.set_main_option("sqlalchemy.url", "postgresql://{settings.db_user}:{settings.db_password}@{settings.db_host}:{settings.db_port}/{settings.db_name}")  
