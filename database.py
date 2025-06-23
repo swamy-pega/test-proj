@@ -13,9 +13,9 @@ load_dotenv()
 
 #DATABASE_URL = os.getenv("DB_URL")
 
-DATABASE_URL = os.getenv("DATABASE_URL")
-DATABASE_URL_set=settings.db_url
-print("Conneted the database..."+DATABASE_URL+" from settings "+DATABASE_URL_set)
+#DATABASE_URL = os.getenv("DATABASE_URL")
+DATABASE_URL=settings.db_url
+print("Conneted the database..."+DATABASE_URL+" from settings "+ str(settings.db_host) + " " + str(settings.db_port) + " " + str(settings.db_user) + " " + str(settings.db_password) + " " + str(settings.db_name)   )
 
 if DATABASE_URL and DATABASE_URL.startswith("postgres://"):
     DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
