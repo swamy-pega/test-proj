@@ -52,7 +52,10 @@ def add_question(question: apischema.questions):
             explanation=question.explanation
         )
         db.add(new_question)
+        print("##########new question"+" "+str(new_question))
+        # Commit the new question to the database
         db.commit()
+        print("##########new commit"+" "+str(new_question.id))
         db.refresh(new_question)  # Refresh to get the new ID
         print("##########else new question"+" "+str(new_question.id))
         if not new_question:
