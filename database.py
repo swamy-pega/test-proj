@@ -12,8 +12,10 @@ load_dotenv()
 #api_url = os.getenv("API_URL")
 
 #DATABASE_URL = os.getenv("DB_URL")
-DATABASE_URL=settings.db_url
-print("Conneted the database...")
+
+DATABASE_URL = os.getenv("DATABASE_URL")
+DATABASE_URL_set=settings.db_url
+print("Conneted the database..."+DATABASE_URL+" "+DATABASE_URL_set)
 #m/swamy-pega/python_api.git
 engine = create_engine(DATABASE_URL)
 
