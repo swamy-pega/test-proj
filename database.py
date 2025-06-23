@@ -4,13 +4,15 @@ from sqlalchemy import Column, Integer, String, DateTime, Boolean, ForeignKey
 from sqlalchemy.orm import declarative_base
 import os
 from dotenv import load_dotenv
+from config import settings
 
 # Replace with your actual DB URL
 load_dotenv()
 
-api_url = os.getenv("API_URL")
+#api_url = os.getenv("API_URL")
 
-DATABASE_URL = os.getenv("DB_URL")
+#DATABASE_URL = os.getenv("DB_URL")
+DATABASE_URL=settings.db_url
 print("Conneted the database...")
 #m/swamy-pega/python_api.git
 engine = create_engine(DATABASE_URL)

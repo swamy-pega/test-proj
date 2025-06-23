@@ -8,6 +8,7 @@ class Settings(BaseSettings):
     db_user: str = Field(..., env='DB_USER')
     db_password: str = Field(..., env='DB_PASSWORD')
     db_name: str = Field(..., env='DB_NAME')
+    db_url: str = Field(..., env='DB_URL')
 
     # Application settings
     app_name: str = Field('MyApp', env='APP_NAME')
