@@ -28,14 +28,15 @@ from routers.auth import authrouter
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from config import settings
-
-
+from fastapi.staticfiles import StaticFiles
+#from flask import Flask, jsonify,redirect    
 
 Base.metadata.create_all(bind=engine)
 app = FastAPI()
+
 origins = [
     "http://localhost:5173",
-    "http://127.0.0.1:8000",
+    "http://127.0.0.1:8000",  "http://localhost:8000",
     "https://your-frontend-domain.com"
 ]
 app.add_middleware(
@@ -45,6 +46,8 @@ app.add_middleware(
     allow_methods=["*"],              # Allows all HTTP methods (GET, POST, etc.)
     allow_headers=["*"],              # Allows all headers
 )
+
+
 
 #print("ssetting..." + str(settings.db_host) + " " + str(settings.db_port) + " " + str(settings.db_user) + " " + str(settings.db_password) + " " + str(settings.db_name))
 #get db for sqlalchemy
@@ -56,7 +59,19 @@ app.include_router(questionsrouter)
 app.include_router(userrouter)
 app.include_router(authrouter)
 
+
+# Serve React static files
+app.mount("/quiz-app", StaticFiles(directory="./myquiz-frontend/dist", html=True), name="quiz-app")
+
 @app.get("/")
 def read_root():
-    return {"Hello": "Welcome to the FastAPI application!"}   ,
+    return {"message": "Welcome to the FastAPI application!"}
+
+
+
+@app.get("/api/hello")
+def hello():
+    return {"message": "Hello from FastAPI!"}
+
+
 
