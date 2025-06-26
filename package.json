@@ -2,8 +2,15 @@
   "name": "myquiz-heroku",
   "version": "1.0.0",
   "scripts": {
-    "build": "vite build",
-    "heroku-postbuild": "cd myquiz-frontend && npm install && npm run build"
+      "dev": "echo 'skip root dev'",
+      "start": "echo 'skip root start'",
+      "test": "echo 'skip root test'",
+      "lint": "echo 'skip root lint'",
+      "eject": "echo 'skip root eject'",
+      "predeploy": "echo 'skip root predeploy'",
+      "deploy": "echo 'skip root deploy'",
+    "heroku-postbuild": "cd myquiz-frontend && npm install && npm run build",
+     "build": "echo 'skip root build'"
   }
 
   
