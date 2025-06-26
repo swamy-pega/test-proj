@@ -37,7 +37,8 @@ app = FastAPI()
 origins = [
     "http://localhost:5173",
     "http://127.0.0.1:8000",  "http://localhost:8000",
-    "https://your-frontend-domain.com"
+    "http://www.swamy-p.xyz","https://pythonproj-swamy-6ac538a29b8b.herokuapp.com"
+"
 ]
 app.add_middleware(
     CORSMiddleware,
