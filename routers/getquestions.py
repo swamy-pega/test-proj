@@ -19,11 +19,11 @@ def add_answers(answers, id: int, db):
 
     if not isinstance(answers, list):
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid data format for answers")
-    #print("add answers to the database"+" "+str(answers))
+    print("add answers to the database"+" "+str(answers))
     # Assuming 'answer' is a list of Answers objects
     try:
           for answer in answers:
-           #print("############each answers add question to the database"+" "+str(answer))
+           print("############each answers add question to the database"+" "+str(answer))
            new_answer = models.Answers(
             question_id=id,  # Use the provided question ID
             answer_text=answer.answer_text,
@@ -32,7 +32,7 @@ def add_answers(answers, id: int, db):
             created_by=answer.created_by
            )
            db.add(new_answer)
-          db.commit()
+           db.commit()
     
     except Exception as e:
         return {"error": str(e)}#db.refresh(new_answer)
@@ -46,7 +46,7 @@ def add_answers(answers, id: int, db):
 ### add questions to the datbase
 def add_question(question,db): 
     try:
-        print("#####add_question call"+question.question_text+ "db session "+str(db))
+        #print("#####add_question call"+question.question_text+ "db session "+str(db))
         new_question = models.Questions(
             question_text=question.question_text,
             created_at=datetime.now(ZoneInfo("UTC")),
@@ -146,7 +146,9 @@ def get_all_questions(db: Session = Depends(database.get_db)):
 #get all questins by level and topic
 @questionsrouter.get("/{level}/{topic}")
 def get_questions_by_level_and_topic(level: int, topic: str,db: Session = Depends(database.get_db)):
+    #print("get questions by level and topic"+" "+str(level)+" "+str(topic))
     get_questions = db.query(models.Questions).filter(models.Questions.level == level, models.Questions.topic == topic).all()
+    #print("get questions by level and topic"+" "+str(get_questions))
     if not get_questions:
         return {"error": "No questions found for the given level and topic"}
     

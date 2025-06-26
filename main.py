@@ -58,5 +58,5 @@ app.include_router(authrouter)
 
 @app.get("/")
 def read_root():
-    return {"Hello": "testig api potential"}   ,
+    return {"Hello": "Welcome to the FastAPI application!"}   ,
 
