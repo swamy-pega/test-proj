@@ -1,5 +1,5 @@
 {
-  "name": "myquiz-heroku-app",
+  "name": "myquiz-heroku",
   "version": "1.0.0",
   "scripts": {
     "heroku-postbuild": "cd myquiz-frontend && npm install && npm run build"
