@@ -4,6 +4,6 @@
   "scripts": {
   
     "heroku-postbuild": "cd myquiz-frontend && npm install && npm run build",
-    "build": "echo 'root build skipped for heroku'"
+    "build": "echo 'root build skipped for  test heroku'"
   }
 }
