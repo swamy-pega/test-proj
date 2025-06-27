@@ -2,12 +2,8 @@
   "name": "myquiz-heroku",
   "version": "1.1.0",
   "scripts": {
-
-"heroku-postbuild": "npm install --prefix myquiz-frontend && npm run build --prefix myquiz-frontend",
-
-
-
-    "build": "echo 'root build skipped for heroku app heroku '"
+    "build": "echo 'root build skipped for heroku app heroku '",
+    "heroku-postbuild": " npm install --prefix myquiz-frontend && npm run build --prefix myquiz-frontend "
   }
 }
   
