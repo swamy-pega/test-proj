@@ -2,7 +2,8 @@
   "name": "myquiz-heroku",
   "version": "1.0.0",
   "scripts": {
-    "debug": "echo 'Debugging script'",
-    "heroku-postbuild": "cd myquiz-frontend && npm install && npm run build"
+  
+    "heroku-postbuild": "cd myquiz-frontend && npm install && npm run build",
+    "build": "echo 'root build skipped'"
   }
 }
