@@ -3,7 +3,8 @@
   "version": "1.1.0",
   "scripts": {
     "build": "echo 'root build skipped for heroku app heroku '",
-    "heroku-postbuild": " npm install --prefix myquiz-frontend && npm run build --prefix myquiz-frontend "
+   "heroku-postbuild": "echo 'Contents:' && ls -la && cd myquiz-frontend && echo 'Frontend contents:' && ls -la && npm install && npm run build "
+
   }
 }
   
