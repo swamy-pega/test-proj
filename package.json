@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "scripts": {
 
-  "heroku-postbuild": "echo '📦 Starting postbuild...' && cd myquiz-frontend && npm install && echo '📦 Building frontend...' && npm run build && echo '📦 end frontend...' " ,
+  "heroku-postbuild": "echo '📦 Starting postbuild...' && cd myquiz-frontend ' " ,
 
     "build": "echo 'root build skipped for heroku app heroku '"
   }
