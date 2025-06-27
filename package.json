@@ -5,7 +5,7 @@
 
   "heroku-postbuild": "echo '📦 Starting postbuild...' && cd myquiz-frontend && npm install && echo '📦 Building frontend...' && npm run build && echo '📦 end frontend...' " ,
 
-    "build": "echo 'root build skipped for heroku app heroku'"
+    "build": "echo 'root build skipped for heroku app heroku '"
   }
 }
   
