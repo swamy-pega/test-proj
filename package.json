@@ -2,7 +2,7 @@
   "name": "myquiz-heroku",
   "version": "1.1.0",
   "scripts": {
-    "build": "echo 'root build skipped for heroku app heroku ts '",
+    "build": "echo 'root build skipped for heroku app herokuddddd types'",
    "heroku-postbuild": "echo 'Contents:' && ls -la && cd myquiz-frontend && echo 'Frontend contents:' && ls -la && npm install && npm run build "
 
   }
