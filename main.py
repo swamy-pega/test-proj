@@ -27,7 +27,7 @@ from routers.users import userrouter
 from routers.auth import authrouter     
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-from config import settings
+#from config import settings
 from fastapi.staticfiles import StaticFiles
 #from flask import Flask, jsonify,redirect    
 
