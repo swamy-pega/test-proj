@@ -72,7 +72,7 @@ def read_root():
 
 @app.get("/api/hello")
 def hello():
-    return {"message": "Hello from FastAPI!"}
+    return {"message": "Hello from FastAPI! 66"}
 
 
 
