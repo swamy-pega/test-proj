@@ -2,7 +2,7 @@
   "name": "myquiz-heroku",
   "version": "1.1.0",
   "scripts": {
-    "build": "echo 'root build skipped for heroku app herokuddddd types'"
+    "build": "echo 'root build skipped for heroku app herokuddddd types  rrrr' "
 
   }
 }
