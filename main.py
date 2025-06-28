@@ -62,7 +62,7 @@ app.include_router(authrouter)
 
 
 # Serve React static files
-app.mount("/quiz-app", StaticFiles(directory="./myquiz-frontend/dist", html=True), name="quiz-app")
+app.mount("/quiz-app", StaticFiles(directory="./myquiz-app/dist", html=True), name="quiz-app")
 
 @app.get("/")
 def read_root():
