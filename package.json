@@ -3,10 +3,9 @@
   "version": "1.1.0",
   "scripts": {
     "build": "echo 'root build ddskipped for heroku app dddddherokuddddd types rrr testdddddd' ",
-       "heroku-postbuild": "echo 'Contents:' && ls -la && cd myquiz-app-backup && echo 'Frontend contents:' && ls -la && npm install && npm run build "
-
-
+    "heroku-postbuild": "echo 'Contents:' && ls -la && cd myquiz-app-backup && echo 'Frontend contents:' && ls -la && npm install --legacy-peer-deps && npm run build "
+  },
+  "devDependencies": {
+    "vite": "^7.0.0"
   }
 }
-  
-  
