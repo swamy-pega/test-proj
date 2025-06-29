@@ -84,10 +84,11 @@ const level = event.target.value;
     console.log('Selected level:', level);
 
     const baseURL = import.meta.env.VITE_API_URL;
+    const quizapiprefix = import.meta.env.VITE_API_QUIZ_PREFIX;
  console.log('API URL:', baseURL);
 
     //const response = await fetch(`${API_URL}&s=${title}`);
-    const api_url = `${baseURL}/${level}/${topic}`;
+    const api_url = `${baseURL}/${quizapiprefix}/${level}/${topic}`;
 
     //alert("API URL: " + api_url);
 
