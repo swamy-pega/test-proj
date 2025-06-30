@@ -2,7 +2,7 @@
   "name": "myquiz-heroku",
   "version": "1.1.0",
   "scripts": {
-    "build": "echo 'root build ddskipped for heroku app dddddherokuddddd typdes rrr folder missing' ",
+    "build": "echo 'root build ddskipped for heroku app dddddherokuddddd typdes rrr folder sss' ",
     "heroku-postbuild": "echo 'Contents:' && ls -la && cd myquiz-app && echo 'Frontend contents:' && ls -la && npm install --legacy-peer-deps && npm run build "
   },
   "devDependencies": {
