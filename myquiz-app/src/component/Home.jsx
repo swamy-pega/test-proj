@@ -6,7 +6,7 @@ const Home= ()=>
 
     const handleContinue=()=>
     {
-navigate('/Quiz');
+navigate('/quiz-app');
 
     }
 
