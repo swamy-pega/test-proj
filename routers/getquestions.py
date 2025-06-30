@@ -23,7 +23,7 @@ def add_answers(answers, id: int, db):
     # Assuming 'answer' is a list of Answers objects
     try:
           for answer in answers:
-           print("############each answers add question to the database"+" "+str(answer))
+           #print("############each answers add question to the database"+" "+str(answer))
            new_answer = models.Answers(
             question_id=id,  # Use the provided question ID
             answer_text=answer.answer_text,
