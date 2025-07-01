@@ -9,7 +9,10 @@ class Settings(BaseSettings):
     db_password: str = Field(..., env='DB_PASSWORD')
     db_name: str = Field(..., env='DB_NAME')
     db_url: str = Field(..., env='DB_URL')
-
+    SECRET_KEY: str = Field(..., env='SECRET_KEY')
+    ALGORITHM: str = Field(..., env='ALGORITHM')
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = Field(..., env='ACCESS_TOKEN_EXPIRE_MINUTES')
+    
 
     # Application settings
     app_name: str = Field('MyApp', env='APP_NAME')

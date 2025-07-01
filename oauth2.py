@@ -8,13 +8,15 @@ from typing import Optional
 import apischema,database,models
 from fastapi.security import OAuth2PasswordBearer
 
+from config import settings
+
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 
 # OAuth2 configuration for JWT token creation and validation    
 
-SECRET_KEY = "d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7"
-ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 60
+SECRET_KEY = settings.SECRET_KEY
+ALGORITHM = settings.ALGORITHM
+ACCESS_TOKEN_EXPIRE_MINUTES = settings.ACCESS_TOKEN_EXPIRE_MINUTES
 
 def create_access_token(data: dict, expires_delta: int = None):
     to_encode = data.copy()
