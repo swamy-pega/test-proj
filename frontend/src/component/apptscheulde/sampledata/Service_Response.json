@@ -1,0 +1,70 @@
+{
+    "data": [
+        {
+            "Category": "The Works",
+            "CategoryType": "Tile",
+            "selected": "Clear",
+            "position": "180"
+        },
+        {
+            "Category": "Oil Change",
+            "CategoryType": "Tile",
+            "selected": "Clear",
+            "position": "150"
+        },
+        {
+            "Category": "Battery",
+            "CategoryType": "Tile",
+            "selected": "Clear",
+            "position": "140"
+        },
+        {
+            "Category": "Brakes",
+            "CategoryType": "Tile",
+            "selected": "Clear",
+            "position": "130"
+        },
+        {
+            "Category": "Tire Rotation",
+            "CategoryType": "Tile",
+            "selected": "Clear",
+            "position": "120"
+        },
+        {
+            "Category": "Cooling",
+            "CategoryType": "Tile",
+            "selected": "Clear",
+            "position": "110"
+        },
+        {
+            "Category": "Filters",
+            "CategoryType": "Tile",
+            "selected": "Clear",
+            "position": "100"
+        },
+        {
+            "Category": "Lights",
+            "CategoryType": "Tile",
+            "selected": "Clear",
+            "position": "80"
+        },
+        {
+            "Category": "Wipers",
+            "CategoryType": "Tile",
+            "selected": "Clear",
+            "position": "70"
+        },
+        {
+            "Category": "Recalls",
+            "CategoryType": "Recalls",
+            "selected": "Clear",
+            "position": "50"
+        },
+        {
+            "Category": "General Diagnostics",
+            "CategoryType": "General Diagnosis",
+            "selected": "Clear",
+            "position": "0"
+        }
+    ]
+}
